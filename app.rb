@@ -2,8 +2,9 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/reloader'
 require 'sinatra/flash'
-require 'guid'
+require 'securerandom'
 require 'aes'
+
 KEY = 'dfgert45fg4thvb6gh88989u64ggh'
 enable :sessions
 
@@ -27,11 +28,10 @@ get '/' do
 end
 
 post '/' do
-  g = Guid.new
   @message = Message.new(params[:message])
   encrMsg = AES.encrypt(@message.body, KEY)
   @message.body = encrMsg
-  @message.link = g.hexdigest
+  @message.link = SecureRandom.uuid.tr('-', '')
   if @message.destroy_type == 0
     @message.expires_at = Time.now + params[:num].to_i.hour
   else

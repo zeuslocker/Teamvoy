@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       f.text :body
       f.integer :num
       f.integer :destroy_type
-      f.timestamps
+      f.timestamps, null: false
     end
   end
 end

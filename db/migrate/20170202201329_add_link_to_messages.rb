@@ -1,4 +1,4 @@
-class AddLinkToMessages < ActiveRecord::Migration[5.0]
+class AddLinkToMessages < ActiveRecord::Migration
   def change
     add_column :messages, :link, :string
   end
