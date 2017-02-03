@@ -10,6 +10,8 @@ gem "sinatra-flash"
 gem 'aescrypt'
 gem 'aes', '~> 0.5.0'
 gem 'whenever'
+gem "rack"
+gem "activesupport"
 group :test, :development do
   gem "pry"
 end
@@ -19,6 +21,7 @@ group :test do
   gem "database_cleaner"
   gem "capybara"
   gem "shoulda"
+  gem "rack-test"
   gem "shoulda-matchers", "~> 3.1", require: false
   gem "valid_attribute"
 end
