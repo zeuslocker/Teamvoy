@@ -7,7 +7,9 @@ gem "sinatra", "~> 1.4"
 gem "sinatra-activerecord", "~> 2.0"
 gem "sinatra-contrib"
 gem "sinatra-flash"
-
+gem 'aescrypt'
+gem 'aes', '~> 0.5.0'
+gem 'whenever'
 group :test, :development do
   gem "pry"
 end

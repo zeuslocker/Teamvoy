@@ -1,23 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
-    <link rel="stylesheet" href="/stylesheets/app.css" />
-  </head>
-  <body>
-
-    <!-- print flash messages -->
-    <% flash.each do |type, message| %>
-      <div class="flash flash-<%= type %>">
-        <%= message %>
-      </div>
-    <% end %>
-
-    <!-- main content -->
-    <%= yield %>
-
-    <script src="/javascripts/app.js"></script>
-  </body>
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+  <title>Teamvoy</title>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="row">
+    <div class="col-md-2 navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="margin-top: 3px" href="#">Vendetta</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="col-md-7 offset-1 nav navbar-nav">
+        <li class="active"></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+</head>
+<body>
+<div id="content">
+  <%= yield %>
+  <script src="public/vendor/jquery-1.9.1.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -1,0 +1,18 @@
+
+<h2 class="text-center">You create a message!</h2>
+<%= @decrMsgBody %><br><br>
+<h3 class="text-center">This is the link on your message: </h3><br>
+<div style="text-align:center;">
+<!--<button style="margin: 0 auto; min-width:200px;" id="js-copybtn" data-clipboard-text="<%= @message.link %>">
+   <img src="/img/copy-icon.png" height="24px" width="24px"><br>  Copy to clipboard
+</button> -->
+<%= "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}/"+@message.link %>
+</div>
+<p>
+<%= "Created at #{@message.created_at.strftime('%Y-%M-%e %H:%M:%S')}" %>
+<%if @message.destroy_type == 0 %>
+Message will be deleted after <%= @message.expires_at %>
+<%else%>
+This message will be deleted after <%= "#{ @message.visit_counter }" %> visits
+<%end%>
+<p>

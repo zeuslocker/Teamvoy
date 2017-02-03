@@ -1,0 +1,9 @@
+<h1 class="text-center">Your message</h1><br>
+<h3 class="text-center"><%= @decrMsgBody %></h3>
+<p>
+<%if @message.destroy_type == 0 %>
+Message will be deleted after <%= @message.expires_at %>
+<%else%>
+This message will be deleted after <%= "#{ @message.visit_counter }" %> visits
+<%end%>
+<p>
